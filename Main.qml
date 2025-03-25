@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.12
+import QtQuick 2.9
+import QtQuick.Controls 2.5
 
 ApplicationWindow {
     width: 360
@@ -7,24 +7,29 @@ ApplicationWindow {
     visible: true
     title: "Rock-Paper-Scissors"
 
-    SwipeView
-    {
+    property var winCount: 0
+    property var losCount: 0
+
+    SwipeView{
         id: swipeView
         anchors.fill: parent
         currentIndex: 0
         interactive: false
 
-        Item
-        {
-            id: home_Page
+        Home_Page{
+            id: home_page
+            width: 360
+            height: 640
         }
-        Item
-        {
-            id: game_Page
+        Game_Page{
+            id: game_page
+            width: 360
+            height: 640
         }
-        Item
-        {
-            id: end_Page
+        End_Page{
+            id: end_page
+            width: 360
+            height: 640
         }
     }
 }

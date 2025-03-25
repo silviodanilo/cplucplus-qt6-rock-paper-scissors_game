@@ -9,17 +9,27 @@ find_package(Qt6 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appRock-Paper-Scissors_Game
-    main.cpp
+
 )
 
 qt_add_qml_module(appRock-Paper-Scissors_Game
     URI Rock-Paper-Scissors_Game
     VERSION 1.0
     QML_FILES
-        Main.qml
-        QML_FILES Home_Page.qml
-        QML_FILES Game_Page.qml
-        QML_FILES End_Page.qml
+
+        QML_FILES
+        QML_FILES
+        QML_FILES
+        QML_FILES
+        QML_FILES
+        RESOURCES
+        QML_FILES Main.qml
+        QML_FILES End_Page.qml Game_Page.qml Home_Page.qml Player_Phase.qml Result_Phase.qml
+        RESOURCES
+        RESOURCES
+        SOURCES main.cpp
+        RESOURCES drawImg.png
+        RESOURCES losImg.png paperImg.png rockImg.png scissorImg.png winImg.png
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
