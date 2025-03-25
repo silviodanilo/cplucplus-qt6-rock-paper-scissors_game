@@ -21,6 +21,15 @@ Item{
         text: "Good Game!!"
     }
 
+    Image
+    {
+        anchors.centerIn: parent
+        width: 200
+        height: 200
+        antialiasing: true
+        source: "winImg.png"
+    }
+
     Label{
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 100

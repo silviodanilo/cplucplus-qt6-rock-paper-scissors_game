@@ -27,6 +27,8 @@ Item{
         width: 200
         height: 200
         radius: 99
+        font.bold: true
+        font.pointSize: 25
         text: "Start Game"
         background: Rectangle{
             anchors.fill: parent
@@ -40,6 +42,7 @@ Item{
     }
     Label{
         anchors.bottom: parent.bottom
+        anchors.bottomMargin: 50
         anchors.horizontalCenter: parent.horizontalCenter
         color: "white"
         font.bold: true

@@ -32,6 +32,15 @@ Item {
         color: "white"
         font.bold: true
         font.pointSize: 25
+        text: "Click the Icon..."
+    }
+    Label{
+        anchors.bottom: parent.top
+        anchors.bottomMargin: 100
+        anchors.horizontalCenter: parent.horizontalCenter
+        color: "white"
+        font.bold: true
+        font.pointSize: 15
         text: "Win:: "+ winCount +" | "+ losCount+" ::Loss"
     }
     Timer{
