@@ -1,5 +1,8 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.5
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.LocalStorage 2.12
+//import "qrc:/DataBase.js" as LocalStorage
+
 
 Item {
 
@@ -103,5 +106,12 @@ Item {
         console.log(winState)
         gameFrame.setCurrentIndex(1)
         //upload to local storage
+        //LocalStorage.dbUpdate("playerWin", winCount)
+        //LocalStorage.dbSet("playerLos", losCount)
     }
+
+    Component.onCompleted: {
+        //LocalStorage.dbInit()
+    }
+
 }

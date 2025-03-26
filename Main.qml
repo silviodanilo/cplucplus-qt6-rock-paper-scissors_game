@@ -1,5 +1,8 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.5
+import QtQuick.LocalStorage 2.12
+//import "qrc:/Database.js" as LocalStorage
+
 
 ApplicationWindow {
     width: 360
@@ -7,10 +10,14 @@ ApplicationWindow {
     visible: true
     title: "Rock-Paper-Scissors"
 
-    property var winCount: 0
-    property var losCount: 0
+    //property int winCount: LocalStorage.dbGet("playerWin")
+    //property int losCount: LocalStorage.dbGet("playerLos")
 
-    SwipeView{
+    property int winCount: 0
+    property int losCount: 0
+
+    SwipeView
+    {
         id: swipeView
         anchors.fill: parent
         currentIndex: 0
@@ -31,5 +38,10 @@ ApplicationWindow {
             width: 360
             height: 640
         }
+    }
+
+    Component.onCompleted:
+    {
+        //LocalStorage.dbInit()
     }
 }

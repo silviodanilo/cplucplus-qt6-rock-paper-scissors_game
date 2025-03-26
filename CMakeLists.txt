@@ -30,6 +30,9 @@ qt_add_qml_module(appRock-Paper-Scissors_Game
         SOURCES main.cpp
         RESOURCES drawImg.png
         RESOURCES losImg.png paperImg.png rockImg.png scissorImg.png winImg.png
+        QML_FILES
+        QML_FILES
+        RESOURCES qml.qrc
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
