@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.LocalStorage 2.12
-//import "qrc:/DataBase.js" as LocalStorage
+import "file:///D:/Users/silvio.danilo.INTELIGENCIA/Documents/QtProjects/Rock-Paper-Scissors_Game/Database.js" as LocalDatabase
 
 
 Item {
@@ -106,12 +106,14 @@ Item {
         console.log(winState)
         gameFrame.setCurrentIndex(1)
         //upload to local storage
-        //LocalStorage.dbUpdate("playerWin", winCount)
-        //LocalStorage.dbSet("playerLos", losCount)
+        LocalDatabase.dbUpdate("playerWin", winCount)
+        LocalDatabase.dbSet("playerLos", losCount)
     }
 
     Component.onCompleted: {
-        //LocalStorage.dbInit()
+        LocalDatabase.dbInit()
+        //LocalDatabase.dbSet("playerLos", 0)
+        //LocalDatabase.dbSet("playerWin", 0)
     }
 
 }

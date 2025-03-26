@@ -1,7 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.5
 import QtQuick.LocalStorage 2.12
-//import "qrc:/Database.js" as LocalStorage
+import "file:///D:/Users/silvio.danilo.INTELIGENCIA/Documents/QtProjects/Rock-Paper-Scissors_Game/Database.js" as LocalDatabase
 
 
 ApplicationWindow {
@@ -10,11 +10,11 @@ ApplicationWindow {
     visible: true
     title: "Rock-Paper-Scissors"
 
-    //property int winCount: LocalStorage.dbGet("playerWin")
-    //property int losCount: LocalStorage.dbGet("playerLos")
+    property int winCount: LocalDatabase.dbGet("playerWin")
+    property int losCount: LocalDatabase.dbGet("playerLos")
 
-    property int winCount: 0
-    property int losCount: 0
+    //property int winCount: 0
+    //property int losCount: 0
 
     SwipeView
     {
@@ -42,6 +42,8 @@ ApplicationWindow {
 
     Component.onCompleted:
     {
-        //LocalStorage.dbInit()
+        LocalDatabase.dbInit()
+        //LocalDatabase.dbSet("playerLos", 0)
+        //LocalDatabase.dbSet("playerWin", 0)
     }
 }
